@@ -7,13 +7,13 @@ from weather import ob_havo_qidir
 from regionbutton import viloyatlar_btn
 
 logging.basicConfig(level=logging.INFO)
-bot = Bot(token="7799504308:AAFQWnO4ouYa1laQwm72abFtqkwn29T8Ay4")
+bot = Bot(token="7799504308:AAEAPFrA4NM9wlbsFojCpzZPWjv1GbssUAs")
 dp = Dispatcher()
 
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
     full_name = message.from_user.full_name
-    await message.answer(f"Salom, {full_name}",reply_markup=viloyatlar_btn)
+    await message.answer(f"Salom, {full_name}",reply_markup=viloyatlar_btn.as_markup())
 
 @dp.message(F.text)
 async def ob_havo_malumoti(message: types.Message):
